@@ -1,21 +1,31 @@
 # Project 3: Spots
 
-### Overview  
+### Overview
 
-* Intro  
-* Figma  
-* Images  
-  
+- Intro
+- Figma
+- Images
+
 **Intro**
-  
-This project is made so all the elements are displayed correctly on popular screen sizes. We recommend investing more time in completing this project, since it's more difficult than previous ones.  
-  
-**Figma**  
-  
-* [Link to the project on Figma](https://www.figma.com/file/BBNm2bC3lj8QQMHlnqRsga/Sprint-3-Project-%E2%80%94-Spots?type=design&node-id=2%3A60&mode=design&t=afgNFybdorZO6cQo-1)
-  
-**Images**  
-  
-The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster. 
-  
-Good luck and have fun!
+
+1. Spots
+
+2. This project is a responsive portfolio website that showcases projects, skills, and contact details. It features an interactive UI with animations and a clean design to improve user engagement.
+
+3. Technologies & Techniques Used
+
+HTML: Structured the webpage using semantic HTML elements for better accessibility and SEO.
+
+CSS: Styled the webpage using modern CSS techniques such as Flexbox, Grid, and media queries to ensure responsiveness.
+
+Figma: Followed a standard design format from Figma to create a visually appealing layout and improve design accuracy.
+
+CSS Best Practices: Focused on maintaining a clean and scalable stylesheet, ensuring consistency in spacing, typography, and color schemes.
+
+BEM Methodology Used Block, Element, Modifier (BEM) naming conventions for better maintainability and organization of CSS classes.
+
+Responsive Design: Ensured the webpage adapts well to different screen sizes, enhancing usability on mobile and desktop devices.
+
+**Figma**
+
+- [Link to the project on Figma](https://www.figma.com/board/gxeC61NiypJlTzAmIWLTqQ/JFeldt_Sprint3?node-id=0-1&p=f&t=6L3YwIDmorOucXUN-0)
