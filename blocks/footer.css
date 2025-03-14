@@ -1,32 +1,17 @@
-body {
-  background-color: #fcf5e5;
-  margin: 0;
-  font-family: "Poppins", Arial, Helvetica, sans-serif;
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
-
 .footer {
-  position: absolute;
-  top: 1340px;
-  left: 50%;
-  transform: translateX(-50%);
+  width: 104px;
   height: 16px;
-  padding-bottom: 40px;
+  top: 1340px;
+  left: 668px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 70px 0;
+  width: 100%;
 }
 
 .footer__text {
   font-weight: 400;
   font-size: 16px;
-  line-height: 16px;
-  letter-spacing: 0;
-  text-align: center;
-  margin: 0;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.footer a:hover {
-  text-decoration: underline;
+  line-height: 1;
 }
