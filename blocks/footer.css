@@ -1,17 +1,15 @@
 .footer {
-  width: 104px;
-  height: 16px;
-  top: 1340px;
-  left: 668px;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 70px 0;
-  width: 100%;
+  padding: 60px 0;
 }
 
 .footer__text {
   font-weight: 400;
   font-size: 16px;
   line-height: 1;
+  color: #212121;
+  opacity: 70%;
 }

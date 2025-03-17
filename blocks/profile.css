@@ -6,10 +6,9 @@
 }
 
 .profile__avator {
-  margin-right: 20px;
   height: 190px;
   width: 190px;
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
 .profile__column {
@@ -22,6 +21,7 @@
   font-weight: 500;
   font-size: 32px;
   line-height: 1;
+  color: #212121;
   display: -webkit-box;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -35,6 +35,7 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 1;
+  color: #212121;
   opacity: 70%;
   display: -webkit-box;
   overflow: hidden;
@@ -54,8 +55,13 @@
   border: none;
   display: flex;
   gap: 8px;
+  color: #212121;
   opacity: 0.7;
   cursor: pointer;
+}
+
+.profile__edit-btn:hover {
+  opacity: 100%;
 }
 
 .profile__add-btn {
@@ -78,16 +84,20 @@
   justify-content: center;
 }
 
+.profile__add-btn:hover {
+  opacity: 70%;
+}
+
 @media screen and (max-width: 627px) {
   .profile {
     flex-direction: column;
     min-width: 288px;
-    align-items: cneter;
+    align-items: center;
     text-align: center;
     padding-top: 20px;
   }
 
-  .profile__avatar {
+  .profile__avator {
     margin-right: 0;
     height: 80px;
     width: 80px;
@@ -104,7 +114,6 @@
   }
 
   .profile__description {
-    font-size: 16px;
     margin: 0 0 32px;
   }
 
