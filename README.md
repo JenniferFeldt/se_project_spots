@@ -26,8 +26,10 @@ BEM Methodology Used Block, Element, Modifier (BEM) naming conventions for bette
 
 Responsive Design: Ensured the webpage adapts well to different screen sizes, enhancing usability on mobile and desktop devices.
 
+screenshots that detail the project features [LINK] (https://drive.google.com/file/d/1T5bvTOOpOPJCC0I0Enl2Sp99M7vsm4Cd/view?usp=drive_link)
+
 **Figma**
 
-- [Link to the project on Figma](https://www.figma.com/board/gxeC61NiypJlTzAmIWLTqQ/JFeldt_Sprint3?node-id=0-1&p=f&t=6L3YwIDmorOucXUN-0)
+5. [The link to your deployed project on GitHub Pages] (git@github.com:JenniferFeldt/se_project_spots.git)
 
 -[ink to the project on my video] (https://drive.google.com/file/d/1_lFYPJbPfTX2Njaw3Wgqbrezz6f-DLoa/view?usp=drive_link)
