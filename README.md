@@ -29,3 +29,5 @@ Responsive Design: Ensured the webpage adapts well to different screen sizes, en
 **Figma**
 
 - [Link to the project on Figma](https://www.figma.com/board/gxeC61NiypJlTzAmIWLTqQ/JFeldt_Sprint3?node-id=0-1&p=f&t=6L3YwIDmorOucXUN-0)
+
+-[ink to the project on my video] (https://drive.google.com/file/d/1_lFYPJbPfTX2Njaw3Wgqbrezz6f-DLoa/view?usp=drive_link)
