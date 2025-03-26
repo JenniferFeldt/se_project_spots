@@ -1,6 +1,5 @@
 .profile {
   display: flex;
-  gap: 20px;
   padding: 34px 0 20px;
   border-bottom: 1px rgba(33, 33, 33, 0.4) solid;
 }
@@ -61,7 +60,7 @@
 }
 
 .profile__edit-btn:hover {
-  opacity: 100%;
+  opacity: 1;
 }
 
 .profile__add-btn {
@@ -85,7 +84,7 @@
 }
 
 .profile__add-btn:hover {
-  opacity: 70%;
+  opacity: 0.7;
 }
 
 @media screen and (max-width: 627px) {
@@ -94,7 +93,7 @@
     min-width: 288px;
     align-items: center;
     text-align: center;
-    padding-top: 20px;
+    padding: 20px;
   }
 
   .profile__avator {
@@ -115,6 +114,10 @@
 
   .profile__description {
     margin: 0 0 32px;
+  }
+  .profile__edit-btn {
+    margin: 0 90.33px;
+    width: 100%;
   }
 
   .profile__add-btn {
