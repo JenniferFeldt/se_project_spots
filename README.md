@@ -1,18 +1,12 @@
-# Project 3: Spots
+# Spots
 
-### Overview
+An image sharing site.
 
-- Intro
-- Figma
-- Images
+## Description
 
-**Intro**
+This project is a responsive portfolio website that showcases projects, skills, and contact details. It features an interactive UI with animations and a clean design to improve user engagement.
 
-1. Spots
-
-2. This project is a responsive portfolio website that showcases projects, skills, and contact details. It features an interactive UI with animations and a clean design to improve user engagement.
-
-3. Technologies & Techniques Used
+## Technologies & Techniques Used
 
 HTML: Structured the webpage using semantic HTML elements for better accessibility and SEO.
 
@@ -28,8 +22,10 @@ Responsive Design: Ensured the webpage adapts well to different screen sizes, en
 
 screenshots that detail the project features [LINK] (https://drive.google.com/file/d/1T5bvTOOpOPJCC0I0Enl2Sp99M7vsm4Cd/view?usp=drive_link)
 
-**Figma**
+## Deployment
 
-5. [The link to your deployed project on GitHub Pages] (git@github.com:JenniferFeldt/se_project_spots.git)
+[Deployed Link] (https://jenniferfeldt.github.io/se_project_spots/)
 
--[ink to the project on my video] (https://drive.google.com/file/d/1_lFYPJbPfTX2Njaw3Wgqbrezz6f-DLoa/view?usp=drive_link)
+## Video about my project
+
+[Video Link] (https://drive.google.com/file/d/1_lFYPJbPfTX2Njaw3Wgqbrezz6f-DLoa/view?usp=drive_link)
