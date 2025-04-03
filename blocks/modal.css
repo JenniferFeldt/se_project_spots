@@ -44,9 +44,8 @@
 .modal__title {
   margin: 0 0 32px;
   font-weight: 500;
+  font-size: 32px;
   line-height: 1;
-  margin: 0;
-  padding: 0;
 }
 
 .modal__form {
@@ -84,8 +83,24 @@
   display: block;
   margin: 8px 0 0;
   width: 100%;
+  padding: 16px 12px 16px 12px;
+  gap: 10px;
+  border-radius: 8px;
+  border: 1;
+  color: #212121;
+  opacity: 0.4;
 }
 
 .modal__input::placeholder {
   color: #2121214d;
+  width: 255px;
+  height: 20px;
+  size: 20px;
+  line-height: 1;
+}
+
+@media screen and (max-width: 627px) {
+  .modal__submit-btn {
+    width: 100%;
+  }
 }
