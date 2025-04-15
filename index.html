@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="???" />
     <meta name="author" content="Jennifer Feldt" />
-    <meta name="keywords" content="HTML, CSS. ???" />
+    <meta name="keywords" content="HTML, CSS, JS" />
     <title>Spots</title>
     <link rel="stylesheet" href="./pages/index.css" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
@@ -111,7 +111,9 @@
       </footer>
       <div class="modal" id="edit-profile-modal">
         <div class="modal__container">
-          <button class="modal__close-bnt">X</button>
+          <button type="button" class="modal__close-bnt">
+            <img src="./images/close-icon.svg" alt="Close icon" />
+          </button>
           <h2 class="modal__title">Edit profile</h2>
           <form class="modal__form">
             <label for="profile-name-input" class="modal__label">
@@ -138,7 +140,9 @@
       </div>
       <div class="modal" id="new-post-modal">
         <div class="modal__container">
-          <button type="button" class="modal__close-bnt">X</button>
+          <button type="button" class="modal__close-bnt">
+            <img src="./images/close-icon.svg" alt="Close icon" />
+          </button>
           <h2 class="modal__title">New post</h2>
           <form class="modal__form">
             <label for="card-image-input" class="modal__label">
@@ -150,10 +154,10 @@
                 placeholder="Paste a link to the picture"
               />
             </label>
-            <label for="Caption-input" class="modal__label">
+            <label for="caption-input" class="modal__label">
               Caption
               <input
-                id="Caption-input"
+                id="caption-input"
                 type="text"
                 class="modal__input"
                 placeholder="Type your caption"
