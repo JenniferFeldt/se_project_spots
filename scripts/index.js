@@ -20,7 +20,7 @@ const profileNameEl = document.querySelector(".profile__name");
 const profileDescriptionEl = document.querySelector(".profile__description");
 
 const cardimageEl = document.querySelector(".card__image");
-const captionEl = document.querySelector(".caption");
+const captionEl = document.querySelector(".card__title");
 
 editProfileBtn.addEventListener("click", function () {
   editProfileNameInput.value = profileNameEl.textContent;
@@ -33,8 +33,8 @@ editProfileCloseBtn.addEventListener("click", function () {
 });
 
 newPostBtn.addEventListener("click", function () {
-  newPostCardImageInput.value = "";
-  newPostCaptionInput.value = "";
+  newPostCardImageInput.value = cardimageEl.src;
+  newPostCaptionInput.value = captionEl.textContent;
   newPostModal.classList.add("modal_is-opened");
 });
 
@@ -50,3 +50,12 @@ function handleEditProfileSubmit(evt) {
 }
 
 editProfileForm.addEventListener("submit", handleEditProfileSubmit);
+
+function handleNewPostSubmit(evt) {
+  evt.preventDefault();
+  cardimageEl.src = newPostCardImageInput.value;
+  captionEl.textContent = newPostCaptionInput.value;
+  newPostModal.classList.remove("modal_is-opened");
+}
+
+newPostForm.addEventListener("submit", handleNewPostSubmit);
