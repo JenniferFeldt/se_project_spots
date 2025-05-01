@@ -49,40 +49,70 @@ const profileDescriptionEl = document.querySelector(".profile__description");
 const cardimageEl = document.querySelector(".card__image");
 const captionEl = document.querySelector(".card__title");
 
+function openModal(modal) {
+  modal.classList.add("modal_is-opened");
+}
+
+function closeModal(modal) {
+  modal.classList.remove("modal_is-opened");
+}
+
 editProfileBtn.addEventListener("click", function () {
   editProfileNameInput.value = profileNameEl.textContent;
   editProfileDescriptionInput.value = profileDescriptionEl.textContent;
-  editProfileModal.classList.add("modal_is-opened");
+  // editProfileModal.classList.add("modal_is-opened");
+  openModal(editProfileModal);
 });
 
 editProfileCloseBtn.addEventListener("click", function () {
-  editProfileModal.classList.remove("modal_is-opened");
+  // editProfileModal.classList.remove("modal_is-opened");
+  closeModal(editProfileModal);
 });
+
+function openModal(modal) {
+  modal.classList.add("modal_is-opened");
+}
+
+function closeModal(modal) {
+  modal.classList.remove("modal_is-opened");
+}
 
 newPostBtn.addEventListener("click", function () {
   newPostCardImageInput.value = cardimageEl.src;
   newPostCaptionInput.value = captionEl.textContent;
-  newPostModal.classList.add("modal_is-opened");
+  // newPostModal.classList.add("modal_is-opened");
+  openModal(newPostModal);
 });
 
 newPostCloseBtn.addEventListener("click", function () {
-  newPostModal.classList.remove("modal_is-opened");
+  // newPostModal.classList.remove("modal_is-opened");
+  closeModal(newPostModal);
 });
+
+function closeModal(modal) {
+  modal.classList.remove("modal_is-opened");
+}
 
 function handleEditProfileSubmit(evt) {
   evt.preventDefault();
   profileNameEl.textContent = editProfileNameInput.value;
   profileDescriptionEl.textContent = editProfileDescriptionInput.value;
-  editProfileModal.classList.remove("modal_is-opened");
+  // editProfileModal.classList.remove("modal_is-opened");
+  closeModal(editProfileModal);
 }
 
 editProfileForm.addEventListener("submit", handleEditProfileSubmit);
+
+function closeModal(modal) {
+  modal.classList.remove("modal_is-opened");
+}
 
 function handleNewPostSubmit(evt) {
   evt.preventDefault();
   cardimageEl.src = newPostCardImageInput.value;
   captionEl.textContent = newPostCaptionInput.value;
-  newPostModal.classList.remove("modal_is-opened");
+  // newPostModal.classList.remove("modal_is-opened");
+  closeModal(newPostModal);
 }
 
 newPostForm.addEventListener("submit", handleNewPostSubmit);
