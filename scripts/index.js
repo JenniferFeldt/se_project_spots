@@ -54,6 +54,14 @@ const newPostForm = newPostModal.querySelector(".modal__form");
 const newPostCardImageInput = newPostModal.querySelector("#card-image-input");
 const newPostCaptionInput = newPostModal.querySelector("#caption-input");
 
+//here #1
+const previewModal = document.querySelector("#preview-modal");
+const previewCloseBtn = previewModal.querySelector(
+  ".modal__close-btn_type_preview"
+);
+const previewImageEl = previewModal.querySelector(".modal__image");
+const previewCaptionEl = previewModal.querySelector(".modal__caption");
+
 // Card template
 const cardTemplate = document
   .querySelector("#card-template")
@@ -89,6 +97,14 @@ function getCardElement(data) {
     cardDeleteBtnEl.closest(".card").remove();
   });
 
+  //do here #2
+  cardImageEl.addEventListener("click", () => {
+    previewImageEl.src = data.link;
+    previewImageEl.alt = data.name;
+    previewCaptionEl.textContent = data.name;
+    openModal(previewModal);
+  });
+
   return cardElement;
 }
 
@@ -115,6 +131,10 @@ newPostBtn.addEventListener("click", function () {
   newPostCardImageInput.value = "";
   newPostCaptionInput.value = "";
   openModal(newPostModal);
+});
+
+previewCloseBtn.addEventListener("click", () => {
+  previewModal.classList.remove("modal_is-opened");
 });
 
 newPostCloseBtn.addEventListener("click", function () {
@@ -147,13 +167,4 @@ newPostForm.addEventListener("submit", function (evt) {
 initialCards.forEach(function (item) {
   const cardElement = getCardElement(item);
   cardsList.append(cardElement);
-});
-
-const previewModal = document.querySelector("#preview-modal");
-const previewCloseBtn = previewModal.querySelector(
-  ".modal__close-btn_type_preview"
-);
-
-previewCloseBtn.addEventListener("click", () => {
-  previewModal.classList.remove("modal_is-opened");
 });

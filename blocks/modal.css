@@ -57,9 +57,7 @@
   background-repeat: no-repeat;
   background-size: contain;
   background-color: transparent;
-  border: none;
   cursor: pointer;
-  transition: top 0.3s ease, right 0.3s ease;
 }
 
 .modal__close-btn_type_preview:hover {
@@ -78,7 +76,7 @@
 
 .modal__image-container {
   position: relative;
-  display: block;
+  display: inline-block;
 }
 
 .modal__caption {
