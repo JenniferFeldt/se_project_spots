@@ -11,6 +11,8 @@
   justify-content: center;
   align-items: center;
   padding: 0 10px;
+  z-index: 9999; /* Make sure modal is above all content */
+  transition: opacity 0.3s ease;
 }
 
 .modal__type_preview {
@@ -29,6 +31,7 @@
   padding: 32px 50px;
   position: relative;
   box-sizing: border-box;
+  background: #fff;
 }
 
 .modal__close-btn {
@@ -40,6 +43,7 @@
   right: 50px;
   width: 40px;
   height: 40px;
+  opacity: 0.4;
 }
 
 .modal__close-btn:hover {
@@ -59,6 +63,7 @@
   background-color: transparent;
   cursor: pointer;
   transition: top 0.3s ease, right 0.3s ease;
+  opacity: 1;
 }
 
 .modal__close-btn_type_preview:hover {
