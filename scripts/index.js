@@ -54,7 +54,6 @@ const newPostForm = newPostModal.querySelector(".modal__form");
 const newPostCardImageInput = newPostModal.querySelector("#card-image-input");
 const newPostCaptionInput = newPostModal.querySelector("#caption-input");
 
-//here #1
 const previewModal = document.querySelector("#preview-modal");
 const previewCloseBtn = previewModal.querySelector(
   ".modal__close-btn_type_preview"
@@ -94,10 +93,9 @@ function getCardElement(data) {
 
   const cardDeleteBtnEl = cardElement.querySelector(".card__delete-btn");
   cardDeleteBtnEl.addEventListener("click", () => {
-    cardDeleteBtnEl.closest(".card").remove();
+    cardElement.remove();
   });
 
-  //do here #2
   cardImageEl.addEventListener("click", () => {
     previewImageEl.src = data.link;
     previewImageEl.alt = data.name;
@@ -128,13 +126,12 @@ editProfileForm.addEventListener("submit", function (evt) {
 
 // New post logic
 newPostBtn.addEventListener("click", function () {
-  newPostCardImageInput.value = "";
-  newPostCaptionInput.value = "";
+  newPostForm.reset();
   openModal(newPostModal);
 });
 
 previewCloseBtn.addEventListener("click", () => {
-  previewModal.classList.remove("modal_is-opened");
+  closeModal(previewModal);
 });
 
 newPostCloseBtn.addEventListener("click", function () {

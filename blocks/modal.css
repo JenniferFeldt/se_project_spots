@@ -11,10 +11,10 @@
   justify-content: center;
   align-items: center;
   padding: 0 10px;
-  transition: opacity 0.3s ease;
+  transition: visibility 0.3s, opacity 0.3s ease-in;
 }
 
-.modal__type_preview {
+.modal_type_preview {
   padding: 0 16px;
 }
 
@@ -86,8 +86,9 @@
 
 .modal__caption {
   position: absolute;
-  width: 214px;
-  height: 32px;
+  left: 0;
+  top: calc(100% + 10px);
+  margin: 0;
   border-radius: 8px;
   padding: 4px 8px;
   background: #212121;
@@ -168,10 +169,6 @@
 }
 
 @media screen and (max-width: 480px) {
-  .modal {
-    padding: 0 16px;
-  }
-
   .modal__container {
     padding: 16px 12px;
   }
@@ -210,8 +207,6 @@
   }
 
   .modal__caption {
-    width: 175px;
-    height: 27px;
     font-size: 16px;
   }
 }
