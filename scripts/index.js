@@ -8,7 +8,7 @@ const settings = {
   formSelector: ".modal__form",
   inputSelector: ".modal__input",
   submitButtonSelector: ".modal__submit-btn",
-  inactiveButtonClass: "button_inactive",
+  inactiveButtonClass: "modal__submit-btn_inactive",
   inputErrorClass: "modal__input_type_error",
   errorClass: "modal__error_visible",
 };
@@ -44,9 +44,9 @@ const initialCards = [
   },
 ];
 
+// === DOM ELEMENTS ===
 const editProfileBtn = document.querySelector(".profile__edit-btn");
 const editProfileModal = document.querySelector("#edit-profile-modal");
-const editProfileCloseBtn = editProfileModal.querySelector(".modal__close-btn");
 const editProfileForm = editProfileModal.querySelector(".modal__form");
 const editProfileNameInput = document.querySelector("#profile-name-input");
 const editProfileDescriptionInput = document.querySelector(
@@ -57,15 +57,11 @@ const profileDescriptionEl = document.querySelector(".profile__description");
 
 const newPostBtn = document.querySelector(".profile__add-btn");
 const newPostModal = document.querySelector("#new-post-modal");
-const newPostCloseBtn = newPostModal.querySelector(".modal__close-btn");
 const newPostForm = newPostModal.querySelector(".modal__form");
 const newPostCardImageInput = document.querySelector("#card-image-input");
 const newPostCaptionInput = document.querySelector("#caption-input");
 
 const previewModal = document.querySelector("#preview-modal");
-const previewCloseBtn = previewModal.querySelector(
-  ".modal__close-btn_type_preview"
-);
 const previewImageEl = previewModal.querySelector(".modal__image");
 const previewCaptionEl = previewModal.querySelector(".modal__caption");
 
@@ -74,6 +70,7 @@ const cardTemplate = document
   .content.querySelector(".card");
 const cardsList = document.querySelector(".cards__list");
 
+// === MODAL FUNCTIONS ===
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
   document.addEventListener("keydown", handleEscClose);
@@ -91,18 +88,34 @@ function handleEscClose(evt) {
   }
 }
 
+// Close modal on overlay click
+const modals = document.querySelectorAll(".modal");
+modals.forEach((modal) => {
+  modal.addEventListener("mousedown", (e) => {
+    if (e.target === modal) {
+      closeModal(modal);
+    }
+  });
+});
+
+// Universal close button handler
+const closeButtons = document.querySelectorAll(".modal__close-btn");
+closeButtons.forEach((button) => {
+  const modal = button.closest(".modal");
+  button.addEventListener("click", () => closeModal(modal));
+});
+
+// === CARD FUNCTIONS ===
 function getCardElement(data) {
   const cardEl = cardTemplate.cloneNode(true);
-  cardEl.querySelector(".card__title").textContent = data.name;
   const img = cardEl.querySelector(".card__image");
+  cardEl.querySelector(".card__title").textContent = data.name;
   img.src = data.link;
   img.alt = data.name;
 
-  cardEl
-    .querySelector(".card__like-btn")
-    .addEventListener("click", (e) =>
-      e.target.classList.toggle("card__like-btn_active")
-    );
+  cardEl.querySelector(".card__like-btn").addEventListener("click", (e) => {
+    e.target.classList.toggle("card__like-btn_active");
+  });
 
   cardEl.querySelector(".card__delete-btn").addEventListener("click", () => {
     cardEl.remove();
@@ -118,17 +131,13 @@ function getCardElement(data) {
   return cardEl;
 }
 
-// === EVENTS ===
+// === EVENT LISTENERS ===
 editProfileBtn.addEventListener("click", () => {
   editProfileNameInput.value = profileNameEl.textContent;
   editProfileDescriptionInput.value = profileDescriptionEl.textContent;
   resetValidation(editProfileForm, settings);
   openModal(editProfileModal);
 });
-
-editProfileCloseBtn.addEventListener("click", () =>
-  closeModal(editProfileModal)
-);
 
 editProfileForm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -138,28 +147,24 @@ editProfileForm.addEventListener("submit", (e) => {
 });
 
 newPostBtn.addEventListener("click", () => {
-  newPostForm.reset();
   resetValidation(newPostForm, settings);
   openModal(newPostModal);
 });
-
-newPostCloseBtn.addEventListener("click", () => closeModal(newPostModal));
-
-previewCloseBtn.addEventListener("click", () => closeModal(previewModal));
 
 newPostForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const name = newPostCaptionInput.value.trim();
   const link = newPostCardImageInput.value.trim();
-
   const newCard = getCardElement({ name, link });
+
   cardsList.prepend(newCard);
   newPostForm.reset();
-  const button = newPostForm.querySelector(settings.submitButtonSelector);
+
+  const button = e.submitter;
   disableButton(button, settings);
   closeModal(newPostModal);
 });
 
+// === INIT ===
 initialCards.forEach((card) => cardsList.append(getCardElement(card)));
-
 enableValidation(settings);

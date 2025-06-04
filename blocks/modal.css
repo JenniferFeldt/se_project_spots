@@ -145,7 +145,7 @@
   justify-content: center;
 }
 
-.button_inactive {
+.modal__submit-btn_inactive {
   background-color: #212121;
   color: #fcf5e5;
   opacity: 0.5;
