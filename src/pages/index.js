@@ -1,14 +1,10 @@
+import "./index.css";
+
 import {
   enableValidation,
   resetValidation,
   disableButton,
 } from "../scripts/validation.js";
-
-import "./index.css";
-
-import { enableValidation } from "../scripts/validation.js";
-import { validationConfig } from "../scripts/validation-config.js"; // if exists
-enableValidation(validationConfig);
 
 const settings = {
   formSelector: ".modal__form",
