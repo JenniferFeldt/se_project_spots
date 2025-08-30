@@ -2,13 +2,14 @@ import {
   enableValidation,
   resetValidation,
   disableButton,
-} from "../scripts/validation.js";
+} from "../../scripts/validation.js";
 
 import "./index.css";
 
-import { enableValidation } from "../scripts/validation.js";
+import { enableValidation } from "../../scripts/validation.js";
 import { validationConfig } from "../scripts/validation-config.js"; // if exists
 enableValidation(validationConfig);
+import Api from "../utils/Api.js";
 
 const settings = {
   formSelector: ".modal__form",
@@ -49,6 +50,36 @@ const initialCards = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-moritz-feldmann-from-pexels.jpg",
   },
 ];
+
+const api = new Api({
+  baseUrl: "https://around-api.en.tripleten-services.com/v1",
+  headers: {
+    authorization: "1379b153-bc83-4a24-99c5-f000c9e7cacd",
+    "Content-Type": "application/json",
+  },
+});
+
+api
+  .getAppInfo()
+  .then(([cards]) => {
+    console.log(cards);
+    cards.forEach((item) => {
+      const cardEl = getCardElement(item);
+      cardList.append(cardEl);
+    });
+  })
+  .catch(console.error);
+
+api
+  .getUserInfo()
+  .then((userData) => {
+    profileName.textContent = userData.name;
+    profileAbout.textContent = userData.about;
+    profileAvatar.src = userData.avatar;
+  })
+  .catch((err) => {
+    console.error("Failed to load user info:", err);
+  });
 
 // === DOM ELEMENTS ===
 const editProfileBtn = document.querySelector(".profile__edit-btn");
@@ -172,5 +203,5 @@ newPostForm.addEventListener("submit", (e) => {
 });
 
 // === INIT ===
-initialCards.forEach((card) => cardsList.append(getCardElement(card)));
-enableValidation(settings);
+// initialCards.forEach((card) => cardsList.append(getCardElement(card)));
+// enableValidation(settings);
