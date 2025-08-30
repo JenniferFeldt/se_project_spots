@@ -9,6 +9,7 @@ import "./index.css";
 import { enableValidation } from "../scripts/validation.js";
 import { validationConfig } from "../scripts/validation-config.js"; // if exists
 enableValidation(validationConfig);
+import Api from ".."
 
 const settings = {
   formSelector: ".modal__form",
@@ -49,6 +50,18 @@ const initialCards = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-moritz-feldmann-from-pexels.jpg",
   },
 ];
+
+const api = new Api({
+  baseUrl: "https://around-api.en.tripleten-services.com/v1",
+  headers: {
+    authorization: "c6b032d7-341c-4d5e-a157-9e62fbe1626d",
+    "Content-Type": "application/json",
+  },
+});
+
+api.getInitialCards().then((cards) => {
+  console.log;
+});
 
 // === DOM ELEMENTS ===
 const editProfileBtn = document.querySelector(".profile__edit-btn");
