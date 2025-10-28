@@ -16,14 +16,17 @@ module.exports = {
   mode: "development",
   devtool: "inline-source-map",
   stats: "errors-only",
+
   devServer: {
-    static: path.resolve(__dirname, "./dist"),
+    static: path.resolve(__dirname, "dist"), // still okay, but HtmlWebpackPlugin now builds it in-memory
     compress: true,
     port: 8080,
     open: true,
+    hot: true, // enable hot reload
     liveReload: true,
-    hot: false,
+    watchFiles: ["src/**/*"], // watches your src folder for changes
   },
+
   target: ["web", "es5"],
 
   module: {
@@ -31,7 +34,7 @@ module.exports = {
       {
         test: /\.js$/,
         loader: "babel-loader",
-        exclude: /node_modules/, 
+        exclude: /node_modules/,
       },
       {
         test: /\.css$/,
